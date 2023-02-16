@@ -1,1 +1,2 @@
 # Attendly
+Attendly is an Attendance Management Tool designed primarily for educational institutions to help Teachers and Students alike by tracking attendace and providing analysis and also easing the process of taking attendance
