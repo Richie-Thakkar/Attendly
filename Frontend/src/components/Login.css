@@ -1,0 +1,124 @@
+.lform {
+    position: relative;
+    color: white;
+    border: 2px solid white;
+    align-items: center;
+    z-index: 0;
+    border-radius: 55px;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
+.login-container h4 {
+    font-size: 2.5rem;
+    font-family: 'Nuosu SIL', serif;
+    font-weight: bold;
+    color: rgb(213, 167, 167);
+}
+
+.login-input-box {
+    position: relative;
+    height: 8vh;
+    color: rgb(238, 172, 172);
+    padding-top: 1.5vh;
+}
+
+.login-input-box input {
+    background: white;
+    border: 3px solid rgb(120, 6, 6);
+    padding-left: 3.5vw;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    width: 19vw;
+    outline: none;
+    color: rgb(92, 6, 6);
+    border-radius: 15px;
+    font-size: 0.9rem;
+    /* background-color: rgb(225, 101, 101); */
+}
+
+.login-input-box input[type='email']:focus,
+.login-input-box input[type='password']:focus {
+    width: 20vw;
+    border: 3px solid rgb(190, 57, 57);
+    color: rgb(92, 6, 6);
+}
+
+.login-input-box .login-icon {
+    position: absolute;
+    top: 3.5vh;
+    left: 1vw;
+    color: white;
+    font-size: 25px;
+}
+
+.login-icon {
+    display: flex;
+}
+
+.login-icon i {
+    transform: translateY(-0.5vh);
+    font-size: 18px;
+    color: rgb(238, 172, 172);
+}
+
+.login-icon p {
+    transform: translateY(-2.5vh);
+    color: rgb(238, 172, 172);
+}
+
+.login-pass-right {
+    width: 18vw;
+    font-size: 0.9rem;
+    text-align: right;
+    padding-bottom: 1vh;
+    cursor: pointer;
+    color: rgb(238, 172, 172);
+}
+
+.login-pass-right:hover {
+    color: rgb(185, 13, 13);
+}
+
+.login-button {
+    width: 6vw;
+    text-align: center;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 25px;
+    height: 5vh;
+}
+
+.login-button a {
+    text-decoration: none;
+    color: black;
+    background-color: black;
+}
+
+.login-button-2 {
+    color: #fff;
+    border: 3px solid rgb(138, 20, 20);
+    background-image: linear-gradient(30deg, rgb(85, 4, 4) 50%, transparent 50%);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    transition: background 300ms ease-in-out;
+    background-color: black;
+}
+
+.login-button-2:hover,
+.login-button-2 a:hover {
+    background-position: 100%;
+    color: rgb(95, 3, 3);
+    background-color: rgb(211, 201, 201);
+    border: 3px solid rgb(95, 3, 3);
+}
