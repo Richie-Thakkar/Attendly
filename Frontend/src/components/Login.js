@@ -12,10 +12,27 @@ function Login_button() {
             [e.target.name]: e.target.value
         });
     }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const email = credentials.email;
+        const password = credentials.password;
+        const data = { email, password };
+        console.log(data);
+        fetch('/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+      }
+      
+
     return (
         <>
             <div className='login'>
-                <form className="lform">
+                <form className="lform" onSubmit={handleSubmit}>
                     <div className='login-container'>
                         <h4>Login</h4>
                         <div className="login-input-box">
