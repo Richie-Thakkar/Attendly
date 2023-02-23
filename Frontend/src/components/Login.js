@@ -32,7 +32,7 @@ function Login_button() {
     return (
         <>
             <div className='login'>
-                <form className="lform" onSubmit={handleSubmit}>
+                <form className="lform" onSubmit={handleSubmit} method="post">
                     <div className='login-container'>
                         <h4>Login</h4>
                         <div className="login-input-box">
