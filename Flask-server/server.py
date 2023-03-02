@@ -16,34 +16,37 @@ app.config['MYSQL_PASSWORD'] = db['mysql_password']
 app.config['MYSQL_DB'] = db['mysql_db']
 
 mysql = MySQL(app)
-from models import Table
+import models
 
 @app.route("/login", methods = ['GET', 'POST'])
 def login():
-    users = Table("teacher", "tid", "tname", "tdesignation", "temail", "tpass", "tspecialization", "tdept", "teducation")
-    users.logout()
+    users = models.Table("teacher", "tid", "tname", "tdesignation", "temail", "tpass", "tspecialization", "tdept", "teducation")
+    #users.logout()
     email = request.json['email']
     password = request.json['password']
-    user = users.getone("email", email)
+    user = users.getone("temail", email)
     if user is None:
-        flash("Invalid Email",'danger')
-        return render_template('login.html')
+        #flash("Invalid Email",'danger')
+        #print("Outer if reached")
+        return jsonify(Status="User Not Found")
     else:
-        og_pass=user[4]
+        og_pass=user[3]
         if password!=og_pass:
-            flash("Password invalid", 'danger')
-            return render_template('login.html')
+            #flash("Password invalid", 'danger')
+            #print("Else reached")
+            return jsonify(status="Invalid Password")
         else:
             session['logged_in'] = True
             session['id'] = user[0]
             session['name'] = user[1]
-            session['email'] = user[3]
-            return redirect('/')        
+            session['email'] = user[2]
+            return jsonify(status="Auth Success!",id=session['id'],name=session['name'],email=session['email'])        
     
 @app.route('/',methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
-    
+    print("Backend Running")
+    return 'True'
+
 
         
 

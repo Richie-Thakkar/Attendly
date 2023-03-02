@@ -15,11 +15,11 @@ class Table:
         
     def getone(self, search, value):
         cur = mysql.connection.cursor()
-        result = cur.execute("SELECT user_id,name,email,password FROM %s WHERE %s = \"%s\"" %(self.table, search, value))
+        result = cur.execute("SELECT tid, tname, temail, tpass FROM %s WHERE %s = \"%s\"" %(self.table, search, value))
         if result > 0: 
             data = {}; 
             data = cur.fetchone()
             cur.close(); 
             return data
-    
+
     
